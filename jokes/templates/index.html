@@ -16,5 +16,13 @@
         </div>
     </div>
 </div>
+
+<script>
+    var socket = new WebSocket('ws://localhost:8000/ws/jk/')
+    socket.onmessage = function(event) {
+        var joke = event.data
+        document.querySelector('#jk').innerText = joke
+    }
+</script>
 </body>
 </html>
